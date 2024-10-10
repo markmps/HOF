@@ -1,0 +1,42 @@
+.success-message {
+    background-color: #dff0d8; /* Green background color */
+    color: #3c763d; /* Dark green text color */
+    border: 1px solid #d6e9c6; /* Green border */
+    padding: 10px 15px; /* Padding */
+    margin-top: 10px; /* Add some space between the form and the message */
+  }
+
+  form {
+    max-width: 400px; /* Set maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding around the form */
+    border: 1px solid #ccc; /* Add a border to the form */
+    border-radius: 5px; /* Add border radius for rounded corners */
+  }
+  
+  input[type="cv_id"],
+  input[type="whichfirm"],
+  input[type="position"],
+  input[type="period"],
+  input[type="project"],
+  input[type="tools"],
+  input[type="description"],
+  button[type="submit"] {
+    display: block; /* Make inputs and button block elements */
+    width: 95%; /* Set width to fill the container */
+    margin-bottom: 10px; /* Add space between input fields */
+    padding: 10px; /* Add padding to input fields */
+    font-size: 16px; /* Set font size */
+    border: 1px solid #ccc; /* Add border to input fields */
+    border-radius: 5px; /* Add border radius for rounded corners */
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff; /* Set button background color */
+    color: #fff; /* Set button text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Darken background color on hover */
+  }

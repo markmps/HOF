@@ -1,0 +1,24 @@
+<div *ngIf="selectedUser">
+    <h2>Users by id</h2>
+    <p>Fullname: {{ selectedUser.fullname }}</p>
+    <p>Email: {{ selectedUser.email }}</p>
+    <p>Phonenumber: {{ selectedUser.phonenumber }}</p>
+  </div>
+  <button (click)="getUserById(1)">Get User by ID</button>
+
+
+  <div>
+    <button (click)="fetchAllUsers()">Get All Users</button>
+  </div>
+  
+  <div *ngIf="users.length > 0">
+    <h2>Users List</h2>
+    <ul>
+      <li *ngFor="let user of users">
+        <p>Username: {{ user.fullname }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>PhoneNumber: {{ user.phonenumber }}</p>
+        
+      </li>
+    </ul>
+  </div>

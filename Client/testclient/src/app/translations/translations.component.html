@@ -1,0 +1,32 @@
+<h1 style="text-align: center;">Select a CV to be translated</h1>
+
+<form [formGroup]="tsForm" (ngSubmit)="onSubmit()">
+    <label for="cv_id">CV ID:</label>
+    <select formControlName="cv_id" id="cv_id">
+      <option *ngFor="let cv of cvs" [value]="cv.cv_id">{{ cv.cv_id }}</option>
+    </select>
+
+    <input type="targetlanguage" formControlName="targetlanguage" placeholder="Enter the language to be translated">
+    
+    <button type="submit">Translate</button>
+  </form>
+
+  <div>
+    <button (click)="fetchAllTranslations()">Get All Translations</button>
+  </div>
+  
+  <div *ngIf="translations.length > 0">
+    <h2>Translations List</h2>
+    <ul>
+      <li *ngFor="let translate of translations">
+        <p>id: {{ translate.translation_id }}</p>
+        <p>nationality: {{ translate.nationality }}</p>
+        <p>birthyear: {{ translate.birthyear }}</p>
+        <p>mainareas: {{ translate.mainareas }}</p>
+        <p>technicalexperience: {{ translate.technicalexperience }}</p>
+        <p>personalcharacteristics: {{ translate.personalcharacteristics }}</p>
+        <p>industryexperience: {{ translate.industryexperience }}</p>
+      </li>
+    </ul>
+  </div>
+  

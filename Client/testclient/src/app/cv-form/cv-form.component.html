@@ -1,0 +1,25 @@
+<h1 style="text-align: center;">Cv form page</h1>
+
+<form [formGroup]="cvForm" (ngSubmit)="onSubmit()">
+  <label for="user_id">Select which user you want to create cv for:</label>
+    <select formControlName="user_id" id="user_id">
+      <option *ngFor="let user of users" [value]="user.user_id">{{ user.fullname }}</option>
+    </select>
+    <label>Which nationality are you from?</label>
+    <input type="nationality" formControlName="nationality">
+    <label>Enter your birth year</label>
+    <input type="birthyear" formControlName="birthyear" matTooltip="Enter your full birthyear ex 10-10-1980">
+    <label>Which main areas have you worked with?</label>
+    <input type="mainareas" formControlName="mainareas">
+    <label>Which technical experience do you have?</label>
+    <input type="technicalexperience" formControlName="technicalexperience" matTooltip="">
+    <label>What are your personal characteristics?</label>
+    <input type="personalcharacteristics" formControlName="personalcharacteristics" matTooltip="">
+    <label>Which industry experience do you have?</label>
+    <input type="industryexperience" formControlName="industryexperience" matTooltip="">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div *ngIf="successMessage" class="success-message">
+    CV created successfully!
+  </div>

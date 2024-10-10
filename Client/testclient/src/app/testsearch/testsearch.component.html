@@ -1,0 +1,29 @@
+<div style="text-align: center;">
+    <h1>User-CV-ProjectDetails Search Test Page</h1>
+    <form [formGroup]="searchForm" style="display: inline-block;">
+        <label>Search for a user</label>
+        <input type="text" class="search-input" formControlName="searchQuery" (keydown.enter)="onSubmit()">
+        <button class="search-button" type="submit" (click)="onSubmit()">Search</button>
+    </form>
+</div>
+
+<div *ngIf="usersWithCvsAndProjectDetails.length > 0" style="text-align: center;">
+    <div *ngFor="let userWithCvsAndPds of usersWithCvsAndProjectDetails">
+        <h2>{{ userWithCvsAndPds.user.fullname + ' ' + userWithCvsAndPds.user.email }}</h2>
+        <ul>
+            <ng-container *ngIf="userWithCvsAndPds.cvs.length > 0; else noCvs">
+                <li *ngFor="let cv of userWithCvsAndPds.cvs">
+                    {{ cv.cv.nationality + ', ' + cv.cv.birthyear + ', ' + cv.cv.mainareas + ', ' + cv.cv.technicalexperience + ', ' + cv.cv.personalcharacteristics + ', ' + cv.cv.industryexperience }}
+                    <ul *ngIf="cv.projectDetails && cv.projectDetails.length > 0">
+                        <h1>Project details:</h1>
+                        <li *ngFor="let pd of cv.projectDetails">{{ pd.description }}</li>
+                    </ul>
+                    <div *ngIf="!cv.projectDetails || cv.projectDetails.length === 0">No Project detail available</div>
+                </li>
+            </ng-container>
+            <ng-template #noCvs>
+                <li>User doesn't have a CV</li>
+            </ng-template>
+        </ul>
+    </div>
+</div>

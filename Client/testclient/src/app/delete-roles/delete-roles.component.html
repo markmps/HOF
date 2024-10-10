@@ -1,0 +1,15 @@
+<h1 style="text-align: center;">Remove role from a User</h1>
+
+<form [formGroup]="roleForm" (ngSubmit)="onDelete(roleForm.value.user_id, roleForm.value.role_id)">
+    <label for="user_id">User:</label>
+    <select formControlName="user_id" id="user_id">
+        <option *ngFor="let user of users" [value]="user.user_id">{{ user.fullname }}</option>
+    </select>
+
+    <label for="role_name">Role:</label>
+    <select formControlName="role_id" id="role_id">
+        <option *ngFor="let role of roles" [value]="role.role_id">{{ role.nameofrole }}</option>
+    </select>
+    
+    <button type="submit">Remove Role</button>
+</form>

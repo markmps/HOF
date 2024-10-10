@@ -1,0 +1,30 @@
+/* my-form.component.css */
+
+/* Style the button */
+button {
+    background-color: #3498db; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Change the button background color on hover */
+  button:hover {
+    background-color: #2980b9; /* Darker Blue */
+  }
+  
+  /* Style the button for mobile devices */
+  @media only screen and (max-width: 600px) {
+    button {
+      font-size: 14px;
+    }
+  }
+  

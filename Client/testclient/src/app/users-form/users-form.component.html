@@ -1,0 +1,13 @@
+<h1 style="text-align: center;">Create a user</h1>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="fullname" placeholder="Fullname">
+    <input type="email" formControlName="email" placeholder="Email">
+    <input type="password" formControlName="password" placeholder="Password">
+    <input type="phonenumber" formControlName="phonenumber" placeholder="Phonenumber">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div *ngIf="successMessage" class="success-message">
+    User created successfully!
+  </div>

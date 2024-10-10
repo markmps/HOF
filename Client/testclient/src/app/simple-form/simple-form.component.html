@@ -1,0 +1,23 @@
+<div>
+    <h2>Create User</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" [(ngModel)]="newUser.fullname" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="newUser.email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="newUser.password" required>
+      </div>
+      <div>
+        <label for="phonenumber">Phone Number:</label>
+        <input type="text" id="phonenumber" name="phonenumber" [(ngModel)]="newUser.phonenumber" required>
+      </div>
+      <button type="submit">Create User</button>
+    </form>
+  </div>
+  

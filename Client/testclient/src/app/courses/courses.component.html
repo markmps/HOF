@@ -1,0 +1,15 @@
+<h1 style="text-align: center;">Courses form page</h1>
+
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+  <label for="user_id">Select which cv you want to create course for:</label>
+    <select formControlName="cv_id" id="cv_id">
+      <option *ngFor="let cv of cvs" [value]="cv.cv_id">{{ cv.cv_id }}</option>
+    </select>
+    <input type="year" formControlName="year" placeholder="Year of the course">
+    <input type="description" formControlName="description" placeholder="Description">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div *ngIf="successMessage" class="success-message">
+    Course created successfully!
+  </div>

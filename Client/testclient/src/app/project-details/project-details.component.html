@@ -1,0 +1,25 @@
+<h1 style="text-align: center;">Project details form page</h1>
+
+<form [formGroup]="pdForm" (ngSubmit)="onSubmit()">
+    <label>Select which cv you want to create project details for</label>
+    <select formControlName="cv_id" id="cv_id">
+    <option *ngFor="let cv of cvs" [value]="cv.cv_id">{{ cv.cv_id }}</option>
+    </select>
+    <label>Which firm did you work at</label>
+    <input type="whichfirm" formControlName="whichfirm" placeholder="Which firm">
+    <label>Which position where at the firm</label>
+    <input type="position" formControlName="position" placeholder="Position" matTooltip="Where you are developer, salesperson etc?">
+    <label>How long of a period did you work there</label>
+    <input type="period" formControlName="period" placeholder="Period" matTooltip="Ex. May 2005 to august 2008">
+    <label>What kind of project was it</label>
+    <input type="project" formControlName="project" placeholder="Project">
+    <label>Which tools did you use</label>
+    <input type="tools" formControlName="tools" placeholder="Tools" matTooltip="Ex what kind of technologies did you use? did you use angular?">
+    <label>Short decription of the project</label>
+    <input type="description" formControlName="description" placeholder="Description">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div *ngIf="successMessage" class="success-message">
+    Project details created successfully!
+  </div>
