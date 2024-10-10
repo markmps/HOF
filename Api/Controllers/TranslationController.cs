@@ -85,7 +85,7 @@ public class TranslationController : ControllerBase
             translatedSections[i] = translationResponse.Translations[0].TranslatedText;
         }
 
-        // 3. Store the translated CV in the database
+       
         var translatedCV = new Translations
         {
             cv_id = cv.cv_id,
